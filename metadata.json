@@ -1,0 +1,5 @@
+{
+  "name": "test30",
+  "description": "A sophisticated React application that analyzes user investment personalities through a multi-stage quiz and provides personalized fund recommendations using Gemini AI.",
+  "requestFramePermissions": []
+}
