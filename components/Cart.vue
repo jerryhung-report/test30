@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Globe, Satellite, ShoppingCart, RotateCcw } from 'lucide-vue-next';
-import { FUND_MAPPING, MOCK_FUNDS } from '~/utils/constants';
+import { FUND_MAPPING, MOCK_FUNDS, ETF_LINKS } from '~/utils/constants';
 
 import type { Persona } from '~/types';
 
@@ -66,7 +66,7 @@ const openSubscription = () => {
             :fund="f" 
             :is-selected="selected.includes(f.code)" 
             @toggle="$emit('toggle', f.code)" 
-            :external-link="f.code === mapping.etf ? 'https://www.pocket.tw/' : undefined"
+            :external-link="f.code === mapping.etf ? ETF_LINKS[f.code] : undefined"
             :is-selectable="f.code !== mapping.etf"
             :show-performance="f.code !== mapping.etf"
           />

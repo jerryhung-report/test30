@@ -107,3 +107,16 @@ export const FUND_MAPPING: Record<string, {core: string[], sat: string[], etf: s
   "口袋阿金":{core:["C0109015","C0115008","C0115009"],sat:["73998065","98637078","98636754"],etf:"00692"},
   "口袋獒":{core:["73998065","98637078","98636611"],sat:["98637337","98638396","98639960"],etf:"00663L"}
 };
+
+export const ETF_LINKS: Record<string, string> = {
+  "00772B": "https://www.pocket.tw/etf/tw/00772B",
+  "0056": "https://www.pocket.tw/etf/tw/0056",
+  "006208": "https://www.pocket.tw/etf/tw/006208",
+  "0050": "https://www.pocket.tw/etf/tw/0050",
+  "00646": "https://www.pocket.tw/etf/tw/00646",
+  "00662": "https://www.pocket.tw/etf/tw/00662",
+  "006203": "https://www.pocket.tw/etf/tw/006203",
+  "0052": "https://www.pocket.tw/etf/tw/0052",
+  "00692": "https://www.pocket.tw/etf/tw/00692",
+  "00663L": "https://www.pocket.tw/etf/tw/00663L"
+};
