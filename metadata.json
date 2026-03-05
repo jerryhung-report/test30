@@ -1,5 +1,5 @@
 {
-  "name": "test30",
-  "description": "A sophisticated React application that analyzes user investment personalities through a multi-stage quiz and provides personalized fund recommendations using Gemini AI.",
+  "name": "口袋投資風格分析",
+  "description": "揭開您的投資口袋 - 專業的基金人格定位分析與推薦系統",
   "requestFramePermissions": []
 }

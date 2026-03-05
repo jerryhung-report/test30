@@ -24,13 +24,11 @@ export interface Question {
 }
 
 export interface UserFormData {
-  name: string;
+  gender: string;
+  age: string;
+  allocation: string;
   phone: string;
   email: string;
-  age: string;
-  occupation: string;
-  income: string;
-  experience: string;
 }
 
 export interface Lead extends UserFormData {
@@ -46,4 +44,5 @@ export interface Persona {
   title: string;
   desc: string;
   riskLevel: number;
+  image?: string;
 }

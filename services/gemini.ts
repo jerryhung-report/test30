@@ -1,8 +1,8 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { Persona, UserFormData } from "../types";
+import type { Persona, UserFormData } from "../types";
 
-// Fix: Use process.env.API_KEY directly in the named parameter object
+// Always use a named parameter for the API key.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generatePersonalizedAdvice = async (
@@ -19,8 +19,7 @@ export const generatePersonalizedAdvice = async (
       model: "gemini-3-flash-preview",
       contents: `
         請以專業理財顧問的身份，為以下用戶提供一份簡短的投資心理與策略分析。
-        用戶姓名: ${user.name}
-        投資經驗: ${user.experience}
+        投資現況 (配比): ${user.allocation}
         測驗得分: ${score}
         投資人格類型: ${persona.title}
         性格描述: ${persona.desc}
@@ -35,8 +34,8 @@ export const generatePersonalizedAdvice = async (
       },
     });
 
-    // Fix: text is a property, not a method
-    return response.text;
+    // Use .text property instead of .text() method.
+    return response.text || "無法取得建議。";
   } catch (error) {
     console.error("Gemini Error:", error);
     return "AI 分析暫時不可用，但根據您的分數，建議您穩步佈局核心與衛星資產組合。";
