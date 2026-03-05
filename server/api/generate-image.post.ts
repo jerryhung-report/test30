@@ -5,13 +5,15 @@ export default defineEventHandler(async (event) => {
   const { breed, personaTitle } = body;
   const config = useRuntimeConfig();
 
+  // Try to get API key from runtime config or process.env
+  // Note: process.env.API_KEY is available in the runtime environment
   const apiKey = config.geminiApiKey || process.env.API_KEY;
+
   if (!apiKey) {
     console.error("API Key is missing in runtime config and process.env");
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Server configuration error: API Key missing",
-    });
+    // Return a structured error response instead of throwing 500 to avoid crashing the server logs
+    // The client should handle this gracefully
+    return { error: "API Key missing", imageUrl: null };
   }
 
   // Log key prefix for debugging (do not log full key)
@@ -51,11 +53,7 @@ export default defineEventHandler(async (event) => {
     return { imageUrl: null };
   } catch (error: any) {
     console.error("AI Image Generation failed:", error);
-    // Extract more details from the error if available
-    const message = error.message || "AI Image Generation failed";
-    throw createError({
-      statusCode: 500,
-      statusMessage: message,
-    });
+    // Return error details instead of throwing 500
+    return { error: error.message || "AI Image Generation failed", imageUrl: null };
   }
 });

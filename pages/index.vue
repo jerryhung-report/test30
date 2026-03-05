@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import type { UserFormData, Persona } from '~/types';
+import { PERSONAS } from '~/utils/constants';
 
 const step = ref<"intro" | "form" | "quiz" | "results" | "cart">("intro");
 const formData = ref<UserFormData>({ gender: "", age: "", phone: "", email: "", allocation: "" });
@@ -61,7 +62,7 @@ const resetAnalysis = () => {
 <template>
   <div class="min-h-screen font-sans text-slate-900 relative">
     <AppBackground />
-    <nav class="sticky top-0 z-[60] bg-white/60 backdrop-blur-xl border-b border-white/20 py-4 px-6 sm:px-10">
+    <nav class="sticky top-0 z-[60] bg-white/60 backdrop-blur-xl border-b border-slate-200/50 py-4 px-6 sm:px-10">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-3 cursor-pointer group" @click="step = 'intro'">
           <div class="flex items-center bg-[#D21118] text-white px-3 py-1.5 rounded-full shadow-md group-hover:shadow-lg transition-all">
@@ -98,9 +99,9 @@ const resetAnalysis = () => {
       />
     </main>
 
-    <footer class="py-12 px-6 text-center border-t border-white/20 bg-white/20 backdrop-blur-md">
+    <footer class="py-12 px-6 text-center border-t border-slate-200/50 bg-white/20 backdrop-blur-md">
       <div class="max-w-4xl mx-auto">
-        <p class="text-[14px] text-[#000000] font-normal leading-relaxed">
+        <p class="text-[14px] text-slate-600 font-normal leading-relaxed">
           結果純屬趣味性質，僅供參考，不構成任何投資分析意見或推介建議。本公司/本遊戲不保證預測之準確性，過往績效亦不代表未來結果。本資訊不作為評估投資人風險屬性、承受度或商品風險分級之依據。投資必有風險，投資人應獨立判斷並自負盈虧。 交易前請務必詳閱各投資產品揭露內容與說明文件，並評估自身財務狀況。
         </p>
       </div>

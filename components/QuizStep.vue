@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Sparkles, ChevronLeft } from 'lucide-vue-next';
+import { QUESTIONS } from '~/utils/constants';
 
 
 const emit = defineEmits<{

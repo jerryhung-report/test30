@@ -14,14 +14,16 @@ const generateImage = async () => {
   loading.value = true;
   try {
     const breed = props.persona.title.replace("口袋", "");
-    const { data, error } = await useFetch('/api/generate-image', {
+    const response = await $fetch<any>('/api/generate-image', {
       method: 'POST',
       body: { breed, personaTitle: props.persona.title }
     });
 
-    if (error.value) throw error.value;
-    if (data.value?.imageUrl) {
-      imageUrl.value = data.value.imageUrl;
+    if (response.error) {
+      console.error("AI Image Generation error:", response.error);
+      imageUrl.value = DEFAULT_IMAGE;
+    } else if (response.imageUrl) {
+      imageUrl.value = response.imageUrl;
     } else {
       imageUrl.value = DEFAULT_IMAGE;
     }
