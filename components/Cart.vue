@@ -32,9 +32,6 @@ const openSubscription = () => {
       <h2 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
         針對 <span class="text-[#D21118]">{{ persona.title }}</span> 性格，<br class="sm:hidden" />適合買什麼？
       </h2>
-      <div class="flex flex-col items-center gap-10">
-        <span class="text-[12px] text-slate-400 font-black uppercase tracking-[0.2em] bg-slate-100/50 px-6 py-2.5 rounded-full border border-slate-100 shadow-sm">績效截止日：2024/12/31</span>
-      </div>
     </div>
 
     <div class="space-y-24">
@@ -68,7 +65,6 @@ const openSubscription = () => {
             @toggle="$emit('toggle', f.code)" 
             :external-link="f.code === mapping.etf ? ETF_LINKS[f.code] : undefined"
             :is-selectable="f.code !== mapping.etf"
-            :show-performance="f.code !== mapping.etf"
           />
         </div>
       </div>

@@ -7,10 +7,8 @@ const props = withDefaults(defineProps<{
   isSelected: boolean;
   externalLink?: string;
   isSelectable?: boolean;
-  showPerformance?: boolean;
 }>(), {
-  isSelectable: true,
-  showPerformance: true
+  isSelectable: true
 });
 
 const emit = defineEmits<{
@@ -50,14 +48,6 @@ const handleClick = () => {
           </div>
           <h4 class="font-extrabold text-2xl sm:text-3xl text-slate-900 leading-tight group-hover:text-[#D21118] transition-colors">{{ fund.name }}</h4>
           <p class="text-base text-slate-500 leading-relaxed font-medium max-w-4xl">{{ fund.desc }}</p>
-        </div>
-      </div>
-      
-      <div v-if="showPerformance" class="pt-8 border-t border-slate-100">
-        <div class="grid grid-cols-3 gap-2 sm:gap-4">
-          <PerformanceMetric label="一年績效" :val="fund.perf" />
-          <PerformanceMetric label="兩年績效" :val="fund.perf2y" />
-          <PerformanceMetric label="三年績效" :val="fund.perf3y" />
         </div>
       </div>
     </div>
