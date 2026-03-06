@@ -11,6 +11,10 @@ const emit = defineEmits<{
   (e: 'next'): void;
 }>();
 
+onMounted(() => {
+  console.log("InfoForm mounted");
+});
+
 const isFormValid = computed(() => !!(props.data.gender && props.data.age && props.data.phone && props.data.email));
 const activeClass = "bg-[#D21118] text-white shadow-xl";
 const inactiveClass = "bg-[#F8FAFC] text-[#94A3B8] hover:bg-slate-50";
@@ -21,7 +25,7 @@ const updateData = (newData: Partial<UserFormData>) => {
 </script>
 
 <template>
-  <div class="max-w-xl mx-auto py-12 px-6 animate-fadeIn">
+  <div class="max-w-xl mx-auto py-12 px-6">
     <div class="bg-white rounded-[3.5rem] p-10 sm:p-14 shadow-2xl shadow-slate-200 border border-slate-50 space-y-12">
       <div class="space-y-10">
         <div class="space-y-4">

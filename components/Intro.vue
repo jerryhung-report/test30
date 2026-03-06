@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { BrainCircuit } from 'lucide-vue-next';
 
-defineEmits<{
+const emit = defineEmits<{
   (e: 'start'): void;
 }>();
+
+const handleStartClick = () => {
+  emit('start');
+};
 </script>
 
 <template>
@@ -28,7 +32,8 @@ defineEmits<{
         </div>
       </div>
       <button 
-        @click="$emit('start')" 
+        type="button"
+        @click.prevent="handleStartClick" 
         class="bg-[#D21118] text-white px-20 py-7 text-2xl font-black rounded-full shadow-2xl hover:opacity-90 transition-all group flex items-center gap-4 mx-auto mt-16"
       >
         啟動分析

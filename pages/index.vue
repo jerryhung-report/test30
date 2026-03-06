@@ -10,9 +10,11 @@ const selectedFunds = ref<string[]>([]);
 
 const P1 = 210; // Max score
 
+const route = useRoute();
+const router = useRouter();
+
 // URL State Sync
 onMounted(() => {
-  const route = useRoute();
   const s = route.query.step as any;
   if (s && ["intro", "form", "quiz", "results", "cart"].includes(s)) {
     step.value = s;
@@ -22,11 +24,21 @@ onMounted(() => {
   if (savedForm) formData.value = JSON.parse(savedForm);
 });
 
-watch(step, (newStep) => {
-  const router = useRouter();
-  router.replace({ query: { ...useRoute().query, step: newStep } });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+watch(step, async (newStep) => {
+  console.log("Step changed to:", newStep);
+  if (route.query.step === newStep) return;
+  
+  try {
+    await router.replace({ query: { ...route.query, step: newStep } });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (e) {
+    console.error("Navigation error:", e);
+  }
 });
+
+const handleStart = () => {
+  step.value = 'form';
+};
 
 const handleFormChange = (d: UserFormData) => {
   formData.value = d;
@@ -77,7 +89,7 @@ const resetAnalysis = () => {
     </nav>
 
     <main>
-      <Intro v-if="step === 'intro'" @start="step = 'form'" />
+      <Intro v-if="step === 'intro'" @start="handleStart" />
       <InfoForm 
         v-else-if="step === 'form'" 
         :data="formData" 

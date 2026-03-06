@@ -10,6 +10,24 @@ export default defineNuxtConfig({
     },
     geminiApiKey: process.env.GEMINI_API_KEY || process.env.API_KEY || ''
   },
+  build: {
+    transpile: ['lucide-vue-next']
+  },
+  vite: {
+    ssr: {
+      noExternal: ['lucide-vue-next']
+    },
+    optimizeDeps: {
+      exclude: ['lucide-vue-next']
+    },
+    server: {
+      hmr: {
+        protocol: 'wss',
+        clientPort: 443,
+        path: 'hmr/'
+      }
+    }
+  },
   app: {
     head: {
       title: '基金人格測驗 - CMoneyFund',
