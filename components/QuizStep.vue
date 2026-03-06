@@ -2,7 +2,6 @@
 import { Sparkles, ChevronLeft } from 'lucide-vue-next';
 import { QUESTIONS } from '~/utils/constants';
 
-
 const emit = defineEmits<{
   (e: 'complete', ans: Record<number, number>): void;
 }>();
@@ -15,18 +14,32 @@ const allQuestions = computed(() => {
 });
 const index = ref(0);
 const answers = ref<Record<number, number>>({});
-const isFinishing = ref(false);
+const isTransitioning = ref(false);
 
 const currentQ = computed(() => allQuestions.value[index.value] || allQuestions.value[0]);
-const handleAnswer = (val: number) => {
-  if (!currentQ.value) return;
-  answers.value[currentQ.value.id] = val;
-  if (index.value === allQuestions.value.length - 1) {
-    isFinishing.value = true;
+
+const handleNext = () => {
+  if (index.value === 18) {
+    isTransitioning.value = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (index.value === allQuestions.value.length - 1) {
+    emit('complete', answers.value);
   } else {
     index.value++;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+};
+
+const handleAnswer = (val: number) => {
+  if (!currentQ.value) return;
+  answers.value[currentQ.value.id] = val;
+  handleNext();
+};
+
+const continueToTree = () => {
+  isTransitioning.value = false;
+  index.value++;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 const isAnswered = computed(() => {
@@ -37,20 +50,19 @@ const isAnswered = computed(() => {
 
 <template>
   <div class="max-w-2xl mx-auto py-12 px-6 animate-fadeIn">
-    <template v-if="isFinishing">
+    <template v-if="isTransitioning">
       <div class="bg-white border border-slate-100 rounded-[3rem] p-10 sm:p-14 shadow-2xl shadow-slate-200 text-center space-y-12">
         <div class="space-y-6">
-          <div class="w-24 h-24 bg-[#D21118]/5 text-[#D21118] rounded-full flex items-center justify-center mx-auto">
-            <Sparkles :size="48" class="animate-pulse" />
+          <div class="w-48 h-48 mx-auto flex items-center justify-center">
+            <img src="https://www.cmoneyfund.com.tw/api/v1.0/File/Download/4a97d8b1-dcd4-4f4b-8089-9d2a2dce35ef" alt="開始種樹" class="w-full h-full object-contain animate-pulse" />
           </div>
-          <h2 class="text-4xl font-black text-slate-900">分析完成！</h2>
+          <h2 class="text-4xl font-black text-slate-900">太棒了！你已經完成一半</h2>
           <p class="text-slate-400 font-medium text-xl">
-            我們已經準備好你的投資風格報告。<br />
-            準備好揭開你的口袋了嗎？
+            現在要前往宇宙種樹囉~
           </p>
         </div>
         <button 
-          @click="$emit('complete', answers)"
+          @click="continueToTree"
           class="bg-[#D21118] text-white px-14 py-5 text-xl w-full sm:w-auto font-bold rounded-2xl hover:bg-[#b00e14] shadow-lg shadow-[#D21118]/10 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mx-auto"
         >
           開始種樹
@@ -131,7 +143,7 @@ const isAnswered = computed(() => {
         </button>
         <button 
           v-if="isAnswered && index < allQuestions.length - 1"
-          @click="index++"
+          @click="handleNext"
           class="flex items-center gap-2 text-[#D21118] font-bold hover:text-[#b00e14] transition-all uppercase text-[11px] tracking-[0.2em]"
         >
           下一題
