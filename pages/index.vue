@@ -73,7 +73,7 @@ const resetAnalysis = () => {
 };
 
 const openExternalLink = () => {
-  window.open('https://dev-fund.cmoneyfund.com.tw', '_blank');
+  window.location.href = 'https://benevolent-sprinkles-a26554.netlify.app/';
 };
 </script>
 
@@ -84,9 +84,9 @@ const openExternalLink = () => {
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center cursor-pointer group" @click="openExternalLink">
           <img 
-            src="https://www.cmoneyfund.com.tw/api/v1.0/File/Download/19b85627-1840-46c8-933b-1b2f83fb13b3" 
+            src="https://www.cmoneyfund.com.tw/api/v1.0/File/Download/951c7b97-3684-4463-971f-46a9ec5f71c4" 
             alt="CMoneyFund 基金人格測驗" 
-            class="h-12 sm:h-16 object-contain"
+            class="h-[34px] sm:h-[45px] object-contain"
           />
         </div>
       </div>

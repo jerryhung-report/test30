@@ -1,10 +1,10 @@
 <template>
-  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#EBF4FA]">
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-gradient-to-br from-[#F0F6FA] via-[#EBF4FA] to-[#CFE2F0]">
     <!-- Decorative Circles -->
-    <div class="absolute top-[-30%] left-[-20%] w-[90vw] h-[90vw] min-w-[800px] min-h-[800px] rounded-full bg-white/50" />
-    <div class="absolute bottom-[-40%] right-[-20%] w-[110vw] h-[110vw] min-w-[1000px] min-h-[1000px] rounded-full bg-white/50" />
-    <div class="absolute top-[10%] right-[-10%] w-[70vw] h-[70vw] min-w-[600px] min-h-[600px] rounded-full bg-white/60" />
-    <div class="absolute bottom-[20%] left-[-10%] w-[60vw] h-[60vw] min-w-[500px] min-h-[500px] rounded-full bg-white/40" />
+    <div class="absolute top-[-30%] left-[-20%] w-[90vw] h-[90vw] min-w-[800px] min-h-[800px] rounded-full bg-white/60 shadow-[0_30px_100px_rgba(0,0,0,0.06)]" />
+    <div class="absolute bottom-[-40%] right-[-20%] w-[110vw] h-[110vw] min-w-[1000px] min-h-[1000px] rounded-full bg-white/60 shadow-[0_30px_100px_rgba(0,0,0,0.06)]" />
+    <div class="absolute top-[10%] right-[-10%] w-[70vw] h-[70vw] min-w-[600px] min-h-[600px] rounded-full bg-white/70 shadow-[0_30px_100px_rgba(0,0,0,0.06)]" />
+    <div class="absolute bottom-[20%] left-[-10%] w-[60vw] h-[60vw] min-w-[500px] min-h-[500px] rounded-full bg-white/50 shadow-[0_30px_100px_rgba(0,0,0,0.06)]" />
 
     <!-- 閃閃 -->
     <img 
