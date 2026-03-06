@@ -30,7 +30,7 @@ const handleStartClick = () => {
       </div>
       <button 
         type="button"
-        @click.prevent="handleStartClick" 
+        @click="handleStartClick" 
         class="bg-[#D21118] text-white px-24 py-5 text-xl sm:text-2xl font-bold rounded-full shadow-lg hover:bg-[#b00e14] transition-all group flex items-center justify-center mx-auto mt-16"
       >
         啟動分析

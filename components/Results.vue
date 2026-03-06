@@ -12,14 +12,14 @@ defineEmits<{
 
 <template>
   <div class="max-w-5xl mx-auto py-12 px-6 animate-fadeIn space-y-12">
-    <div class="bg-white text-[#757575] rounded-[3rem] sm:rounded-[4rem] p-10 sm:p-20 relative overflow-hidden shadow-2xl border border-slate-100">
+    <div class="bg-white text-[#758498] rounded-[3rem] sm:rounded-[4rem] p-10 sm:p-20 relative overflow-hidden shadow-2xl border border-slate-100">
       <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
         <div class="space-y-10 flex-1 text-center md:text-left">
           <div class="space-y-4">
             <span class="text-sm font-black text-[#D21118] tracking-[0.4em] uppercase border-b-2 border-[#D21118]/50 pb-2 inline-block">投資風格分析報告</span>
-            <h2 class="font-black tracking-tighter leading-none text-5xl sm:text-7xl">{{ persona.title }}</h2>
+            <h2 class="font-black tracking-tighter leading-none text-5xl sm:text-7xl text-[#000000]">{{ persona.title }}</h2>
           </div>
-          <p class="text-lg sm:text-2xl text-[#757575] leading-relaxed font-medium">{{ persona.desc }}</p>
+          <p class="text-lg sm:text-2xl text-[#758498] leading-relaxed font-medium">{{ persona.desc }}</p>
         </div>
         <AICharacterImage :persona="persona" />
       </div>

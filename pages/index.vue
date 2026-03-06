@@ -1,9 +1,11 @@
 <script setup lang="ts">
 
+import { ref, onMounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import type { UserFormData, Persona } from '~/types';
 import { PERSONAS } from '~/utils/constants';
 
-const step = ref<"intro" | "form" | "quiz" | "results" | "cart">("intro");
+const step = ref<"intro" | "form" | "quiz" | "results" | "login" | "cart">("intro");
 const formData = ref<UserFormData>({ gender: "", age: "", phone: "", email: "", allocation: "" });
 const persona = ref<Persona>(PERSONAS[0]!);
 const selectedFunds = ref<string[]>([]);
@@ -15,29 +17,29 @@ const router = useRouter();
 
 // URL State Sync
 onMounted(() => {
-  const s = route.query.step as any;
-  if (s && ["intro", "form", "quiz", "results", "cart"].includes(s)) {
-    step.value = s;
+  const s = route.query.step as string;
+  if (s) {
+    if (s.startsWith('quiz')) {
+      step.value = 'quiz';
+    } else if (["intro", "form", "results", "login", "cart"].includes(s)) {
+      step.value = s as any;
+    }
   }
   
   const savedForm = localStorage.getItem('pocket_form');
   if (savedForm) formData.value = JSON.parse(savedForm);
 });
 
-watch(step, async (newStep) => {
-  console.log("Step changed to:", newStep);
-  if (route.query.step === newStep) return;
-  
-  try {
-    await router.replace({ query: { ...route.query, step: newStep } });
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } catch (e) {
-    console.error("Navigation error:", e);
+watch(step, (newStep) => {
+  if (newStep !== 'quiz') {
+    router.push({ query: { ...route.query, step: newStep } });
   }
 });
 
 const handleStart = () => {
+  console.log("handleStart called, changing step to form");
   step.value = 'form';
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const handleFormChange = (d: UserFormData) => {
@@ -69,21 +71,23 @@ const resetAnalysis = () => {
   selectedFunds.value = [];
   step.value = "quiz";
 };
+
+const openExternalLink = () => {
+  window.open('https://dev-fund.cmoneyfund.com.tw', '_blank');
+};
 </script>
 
 <template>
   <div class="min-h-screen font-sans text-slate-900 relative">
     <AppBackground />
-    <nav class="sticky top-0 z-[60] bg-white/60 backdrop-blur-xl border-b border-slate-200/50 py-4 px-6 sm:px-10">
+    <nav class="sticky top-0 z-[60] bg-white/60 backdrop-blur-xl border-b border-slate-200/50 py-1 sm:py-2 px-6 sm:px-10">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center gap-3 cursor-pointer group" @click="step = 'intro'">
-          <div class="flex items-center bg-[#D21118] text-white px-3 py-1.5 rounded-full shadow-md group-hover:shadow-lg transition-all">
-            <span class="font-black text-sm tracking-tighter">CMoneyFund</span>
-          </div>
-          <div class="h-4 w-[1px] bg-slate-300 mx-1" />
-          <span class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight">
-            基金<span class="text-[#D21118]">人格測驗</span>
-          </span>
+        <div class="flex items-center cursor-pointer group" @click="openExternalLink">
+          <img 
+            src="https://www.cmoneyfund.com.tw/api/v1.0/File/Download/19b85627-1840-46c8-933b-1b2f83fb13b3" 
+            alt="CMoneyFund 基金人格測驗" 
+            class="h-12 sm:h-16 object-contain"
+          />
         </div>
       </div>
     </nav>
@@ -100,7 +104,11 @@ const resetAnalysis = () => {
       <Results 
         v-else-if="step === 'results'" 
         :persona="persona" 
-        @continue="step = 'cart'" 
+        @continue="step = 'login'" 
+      />
+      <Login 
+        v-else-if="step === 'login'" 
+        @success="step = 'cart'" 
       />
       <Cart 
         v-else-if="step === 'cart'" 

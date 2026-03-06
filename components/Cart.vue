@@ -22,7 +22,7 @@ const satelliteFunds = computed(() => [
 ]);
 
 const openSubscription = () => {
-  window.open("https://my.cmoneyfund.com.tw/", "_blank");
+  window.open("https://dev-fund.cmoneyfund.com.tw/transaction", "_blank");
 };
 </script>
 

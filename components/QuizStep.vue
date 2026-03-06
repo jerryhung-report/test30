@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { Sparkles, ChevronLeft } from 'lucide-vue-next';
+import { ref, computed, onMounted, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-vue-next';
 import { QUESTIONS } from '~/utils/constants';
+
+const router = useRouter();
+const route = useRoute();
 
 const emit = defineEmits<{
   (e: 'complete', ans: Record<number, number>): void;
@@ -17,6 +22,37 @@ const answers = ref<Record<number, number>>({});
 const isTransitioning = ref(false);
 
 const currentQ = computed(() => allQuestions.value[index.value] || allQuestions.value[0]);
+
+onMounted(() => {
+  const stepQuery = route.query.step as string;
+  if (stepQuery && stepQuery.startsWith('quiz')) {
+    if (stepQuery === 'quiz19-1') {
+      index.value = 18;
+      isTransitioning.value = true;
+    } else {
+      const qNum = parseInt(stepQuery.replace('quiz', ''));
+      if (!isNaN(qNum) && qNum > 0 && qNum <= allQuestions.value.length) {
+        index.value = qNum - 1;
+      }
+    }
+  }
+  
+  if (route.query.step === 'quiz') {
+    router.replace({ query: { ...route.query, step: 'quiz1' } });
+  }
+});
+
+watch(isTransitioning, (newVal) => {
+  if (newVal) {
+    router.push({ query: { ...route.query, step: 'quiz19-1' } });
+  }
+});
+
+watch(index, (newIndex) => {
+  if (!isTransitioning.value) {
+    router.push({ query: { ...route.query, step: 'quiz' + (newIndex + 1) } });
+  }
+});
 
 const handleNext = () => {
   if (index.value === 18) {
@@ -144,9 +180,12 @@ const isAnswered = computed(() => {
         <button 
           v-if="isAnswered && index < allQuestions.length - 1"
           @click="handleNext"
-          class="flex items-center gap-2 text-[#D21118] font-bold hover:text-[#b00e14] transition-all uppercase text-[11px] tracking-[0.2em]"
+          class="flex items-center gap-3 group transition-all"
         >
-          下一題
+          <span class="text-slate-700 font-bold text-sm tracking-tight">下一題</span>
+          <div class="w-8 h-8 bg-[#D21118] text-white rounded-lg flex items-center justify-center shadow-sm group-hover:bg-[#b00e14] transition-colors">
+            <ChevronRight :size="18" :stroke-width="3" />
+          </div>
         </button>
       </div>
     </template>

@@ -12,11 +12,11 @@ const imageUrl = computed(() => {
 </script>
 
 <template>
-  <div class="w-full max-w-[350px] aspect-square flex items-center justify-center relative bg-white rounded-[3rem] border border-slate-100 shadow-inner overflow-hidden group">
+  <div class="w-full max-w-[350px] aspect-square flex items-center justify-center relative bg-gradient-to-b from-[#4A6D91]/10 to-[#00519E]/10 rounded-[3rem] border border-slate-100 shadow-inner overflow-hidden group">
     <img 
       :src="imageUrl" 
       :alt="persona.title" 
-      class="w-full h-full object-contain animate-float mix-blend-multiply" 
+      class="w-full h-full object-contain animate-float" 
     />
   </div>
 </template>
