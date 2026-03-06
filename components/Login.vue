@@ -94,27 +94,30 @@ const handleLogin = () => {
         <!-- Captcha -->
         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
           <label class="font-bold text-slate-800 sm:w-32 shrink-0 text-lg">圖形驗證碼</label>
-          <div class="flex flex-1 items-center gap-2">
+          <div class="flex flex-col sm:flex-row flex-1 gap-2">
             <input 
               v-model="captcha"
               type="text" 
               placeholder="輸入圖形驗證碼"
-              class="w-full sm:w-auto flex-1 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D21118] focus:ring-1 focus:ring-[#D21118] transition-all text-lg"
+              class="w-full sm:flex-1 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-[#D21118] focus:ring-1 focus:ring-[#D21118] transition-all text-lg"
             />
-            <div class="h-[52px] w-28 bg-[#7BC02A] rounded-xl flex items-center justify-center font-bold text-xl tracking-widest shrink-0 overflow-hidden relative">
-               <span class="text-red-800 z-10">6</span>
-               <span class="text-red-900 z-10 ml-1">2</span>
-               <span class="text-blue-800 z-10 ml-1">3</span>
-               <span class="text-blue-900 z-10 ml-1">4</span>
-               <span class="text-black z-10 ml-1">8</span>
-               <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 4px 4px;"></div>
+            <div class="flex items-center gap-2">
+              <div class="h-[52px] w-28 bg-slate-300 rounded-xl flex items-center justify-center font-bold text-xl tracking-widest shrink-0 overflow-hidden relative">
+                 <span class="text-black z-10">3</span>
+                 <span class="text-black z-10 ml-1">4</span>
+                 <span class="text-black z-10 ml-1">4</span>
+                 <span class="text-black z-10 ml-1">4</span>
+                 <span class="text-black z-10 ml-1">4</span>
+                 <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 4px 4px;"></div>
+                 <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(45deg, transparent 45%, #000 45%, #000 55%, transparent 55%); background-size: 20px 20px;"></div>
+              </div>
+              <button type="button" class="h-[52px] w-[52px] bg-slate-100 rounded-xl flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors shrink-0">
+                <RefreshCw :size="20" />
+              </button>
+              <button type="button" class="h-[52px] w-[52px] bg-slate-100 rounded-xl flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors shrink-0">
+                <Volume2 :size="20" />
+              </button>
             </div>
-            <button type="button" class="h-[52px] w-[52px] bg-slate-100 rounded-xl flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors shrink-0">
-              <RefreshCw :size="20" />
-            </button>
-            <button type="button" class="h-[52px] w-[52px] bg-slate-100 rounded-xl flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors shrink-0">
-              <Volume2 :size="20" />
-            </button>
           </div>
         </div>
 
