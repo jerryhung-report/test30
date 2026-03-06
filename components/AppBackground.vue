@@ -17,7 +17,7 @@
     <img 
       src="https://www.cmoneyfund.com.tw/api/v1.0/File/Download/c76bc90c-f17b-4398-9a52-289738c40038" 
       alt="太空袋袋" 
-      class="absolute top-[15%] right-[2%] sm:top-[5%] sm:right-[-2%] w-[80px] sm:w-[180px] md:w-[240px] xl:w-[320px] object-contain animate-float opacity-70 sm:opacity-100"
+      class="absolute top-[15%] right-[2%] sm:top-[5%] sm:right-[-2%] w-[80px] sm:w-[180px] md:w-[240px] xl:w-[320px] object-contain animate-float opacity-70 sm:opacity-100 translate-y-[20px]"
       style="animation-delay: 1.5s;"
     />
   </div>
