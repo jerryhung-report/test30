@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col items-center gap-3 w-full max-w-lg mx-auto mb-10">
-    <div class="flex justify-between w-full px-1 text-[11px] font-black text-slate-400 uppercase tracking-widest">
+    <div class="flex justify-between w-full px-1 text-[14px] font-black text-slate-400 uppercase tracking-widest">
       <span>分析進度</span>
       <span>{{ Math.round((current / total) * 100) }}%</span>
     </div>

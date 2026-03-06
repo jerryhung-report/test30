@@ -122,7 +122,7 @@ const openExternalLink = () => {
     <footer class="py-12 px-6 text-center border-t border-slate-200/50 bg-white/20 backdrop-blur-md">
       <div class="max-w-4xl mx-auto">
         <p class="text-[14px] text-slate-600 font-normal leading-relaxed">
-          結果純屬趣味性質，僅供參考，不構成任何投資分析意見或推介建議。本公司/本遊戲不保證預測之準確性，過往績效亦不代表未來結果。本資訊不作為評估投資人風險屬性、承受度或商品風險分級之依據。投資必有風險，投資人應獨立判斷並自負盈虧。 交易前請務必詳閱各投資產品揭露內容與說明文件，並評估自身財務狀況。
+          投資一定有風險，基金投資有賺有賠，申購前應詳閱公開說明書。過往績效亦不代表未來結果。本資訊不作為評估投資人風險屬性、承受度或商品風險分級之依據，投資人應獨立判斷並自負盈虧。
         </p>
       </div>
     </footer>

@@ -68,8 +68,8 @@ export const QUESTIONS: Record<string, Question[]> = {
     {id:19,text:"比起賺獎金，我更喜歡底薪高一點",type:"range"}
   ],
   type4: [
-    {id:20,q:"宇宙農業部開放三個星系，你想去哪裡？",type:"choice",options:[{val:1,text:"銀河聯盟 (保守)"},{val:4,text:"家鄉基地 (平衡)"},{val:7,text:"蠻荒新星 (積極)"}]},
-    {id:21,q:"來到宇宙樹苗交易所，你會選哪棵?",type:"choice",options:[{val:1,text:"安心麵包樹 (保守)"},{val:4,text:"全能混種樹 (平衡)"},{val:7,text:"傑克魔豆樹 (積極)"}]},
+    {id:20,q:"宇宙農業部開放三個星系，你想去哪裡？",type:"choice",options:[{val:1,text:"銀河聯盟"},{val:4,text:"家鄉基地"},{val:7,text:"蠻荒新星"}]},
+    {id:21,q:"來到宇宙樹苗交易所，你會選哪棵?",type:"choice",options:[{val:1,text:"安心麵包樹"},{val:4,text:"全能混種樹"},{val:7,text:"傑克魔豆樹"}]},
     {id:22,q:"持有「銀河通用幣」讓我更有安全感。",type:"bool"},
     {id:23,q:"豐收的金幣是用來買火箭，而非存在銀行。",type:"bool"},
     {id:24,q:"我喜歡多摘果實落袋，不怕搖錢樹傷了根基。",type:"bool"},

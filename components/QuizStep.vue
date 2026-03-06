@@ -109,7 +109,7 @@ const isAnswered = computed(() => {
       <ProgressBar :current="index + 1" :total="allQuestions.length" />
       <div class="bg-white border border-slate-100 rounded-[3rem] p-10 sm:p-14 shadow-2xl shadow-slate-200 text-center space-y-12 min-h-[450px] flex flex-col justify-center">
         <div class="space-y-4">
-          <span class="text-[11px] font-black text-[#D21118] tracking-widest bg-[#D21118]/5 px-5 py-2 rounded-full uppercase inline-block">
+          <span class="text-[14px] font-black text-[#D21118] tracking-widest bg-[#D21118]/5 px-5 py-2 rounded-full uppercase inline-block">
             第 {{ index + 1 }} 題
           </span>
           <h3 class="text-2xl sm:text-3xl font-black text-slate-900 leading-[1.3]">
@@ -124,13 +124,13 @@ const isAnswered = computed(() => {
                 v-for="v in [1, 2, 3, 4, 5, 6, 7]"
                 :key="v"
                 @click="handleAnswer(v)"
-                class="flex-1 aspect-square sm:h-14 sm:w-14 rounded-2xl font-black text-sm sm:text-lg transition-all"
+                class="flex-1 aspect-square sm:h-14 sm:w-14 rounded-2xl font-black text-[20px] transition-all"
                 :class="answers[currentQ.id] === v ? 'bg-[#D21118] text-white shadow-xl' : 'bg-slate-50 text-slate-400 hover:bg-[#D21118] hover:text-white'"
               >
                 {{ v }}
               </button>
             </div>
-            <div class="flex justify-between text-[11px] font-black text-slate-400 px-1 uppercase tracking-widest">
+            <div class="flex justify-between text-[14px] font-black text-slate-400 px-1 uppercase tracking-widest">
               <span>非常不認同</span>
               <span>非常認同</span>
             </div>
@@ -139,14 +139,14 @@ const isAnswered = computed(() => {
             <template v-if="currentQ.type === 'bool'">
               <button
                 @click="handleAnswer(7)"
-                class="w-full py-5 px-8 rounded-2xl font-bold text-lg text-left flex justify-between items-center group transition-all duration-300"
+                class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
                 :class="answers[currentQ.id] === 7 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
               >
                 是
               </button>
               <button
                 @click="handleAnswer(1)"
-                class="w-full py-5 px-8 rounded-2xl font-bold text-lg text-left flex justify-between items-center group transition-all duration-300"
+                class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
                 :class="answers[currentQ.id] === 1 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
               >
                 否
@@ -157,7 +157,7 @@ const isAnswered = computed(() => {
                 v-for="opt in currentQ.options"
                 :key="opt.val"
                 @click="handleAnswer(opt.val)"
-                class="w-full py-5 px-8 rounded-2xl font-bold text-lg text-left flex justify-between items-center group transition-all duration-300"
+                class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
                 :class="answers[currentQ.id] === opt.val ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
               >
                 {{ opt.text }}
