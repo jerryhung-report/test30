@@ -2,45 +2,846 @@
 import type { Fund, Question, Persona } from '~/types';
 
 export const MOCK_FUNDS: Fund[] = [
-  {code:"C0109015",name:"PGIM Jennison美國成長基金A級別美元累積型",isin:"TW000T1212A5",currency:"USD",risk:4,type:"Core",desc:"聚焦美國大型成長企業，追求資本長期增值的極大化。",perf:"+28.4%",perf2y:"+58.2%",perf3y:"+91.4%"},
-  {code:"98639616",name:"PGIM保德信美國投資級企業債券基金-新臺幣累積型",isin:"TW00000001",currency:"TWD",risk:2,type:"Core",desc:"主要投資於美國投資級債券，追求穩定的資產增值。",perf:"+8.2%",perf2y:"+14.5%",perf3y:"+18.1%"},
-  {code:"98637171",name:"野村亞太複合非投資等級債券基金-累積型新臺幣計價",isin:"TW00000002",currency:"TWD",risk:3,type:"Core",desc:"平衡亞太區投資等級與非投資等級債券，優化收益空間。",perf:"+9.5%",perf2y:"+18.2%",perf3y:"+22.5%"},
-  {code:"98637337",name:"PGIM保德信新興市場企業債券基金-新臺幣累積型",isin:"TW00000003",currency:"TWD",risk:3,type:"Core",desc:"鎖定新興市場優質企業債券，獲取較高的債息回報。",perf:"+10.1%",perf2y:"+19.4%",perf3y:"+24.8%"},
-  {code:"98636594",name:"野村全球高股息基金累積型新臺幣計價",isin:"TW00000004",currency:"TWD",risk:4,type:"Core",desc:"精選全球具備高股息發放能力之龍頭企業，平衡成長與收息。",perf:"+12.5%",perf2y:"+24.1%",perf3y:"+38.2%"},
-  {code:"98636798",name:"野村亞太高股息基金累積型新臺幣計價",isin:"TW00000005",currency:"TWD",risk:4,type:"Core",desc:"聚焦亞太區優質高息股，捕捉區域成長與配息動能。",perf:"+14.2%",perf2y:"+28.5%",perf3y:"+42.1%"},
-  {code:"98638825",name:"統一大東協高股息基金(新台幣)",isin:"TW00000006",currency:"TWD",risk:4,type:"Core",desc:"深耕東協市場，鎖定當地高成長潛力之高息標的項目。",perf:"+16.8%",perf2y:"+32.4%",perf3y:"+48.5%"},
-  {code:"98637910",name:"PGIM保德信中國好時平衡基金-新臺幣累積型",isin:"TW00000007",currency:"TWD",risk:4,type:"Core",desc:"透過股債平衡配置，降低中國市場波動並追求長期增值。",perf:"+11.5%",perf2y:"+15.2%",perf3y:"+20.1%"},
-  {code:"98638198",name:"中國信託樂齡收益平衡基金-美元A",isin:"TW00000008",currency:"USD",risk:4,type:"Core",desc:"鎖定全球高齡化社會商機，採多重資產配置追求收益。",perf:"+9.2%",perf2y:"+16.1%",perf3y:"+22.4%"},
-  {code:"98638199",name:"中國信託樂齡收益平衡基金-美元B",isin:"TW00000009",currency:"USD",risk:4,type:"Core",desc:"鎖定全球高齡化社會商機，採多重資產配置追求收益。",perf:"+9.1%",perf2y:"+15.9%",perf3y:"+21.8%"},
-  {code:"C0115008",name:"法盛盧米斯賽勒斯美國成長股票基金-R/A美元級別",isin:"TW000T0606A1",currency:"USD",risk:4,type:"Core",desc:"由美國投資大師領軍，挖掘具長期競爭力之價值股。",perf:"+22.2%",perf2y:"+45.8%",perf3y:"+72.1%"},
-  {code:"C0115009",name:"法盛盧米斯賽勒斯美國成長股票基金-RET/A美元級別",isin:"TW000T0606A2",currency:"USD",risk:4,type:"Core",desc:"聚焦美國大型成長企業。",perf:"+22.1%",perf2y:"+45.5%",perf3y:"+71.8%"},
-  {code:"98638396",name:"野村亞太新興債券基金-累積類型新臺幣計價",isin:"TW00000010",currency:"TWD",risk:3,type:"Core",desc:"投資於亞太新興市場債券，平衡收益與風險。",perf:"+10.5%",perf2y:"+18.8%",perf3y:"+25.2%"},
-  {code:"98639960",name:"台新新興短期非投資等級債券基金(累積型)-新臺幣",isin:"TW00000011",currency:"TWD",risk:4,type:"Core",desc:"側重短期存續期間標的，降低利率波動影響。",perf:"+11.2%",perf2y:"+20.5%",perf3y:"+28.9%"},
-  {code:"73998065",name:"PGIM保德信大中華基金-新台幣",isin:"TW00000012",currency:"TWD",risk:5,type:"Core",desc:"鎖定兩岸三地最具動能之優質企業，追求超額回報。",perf:"+19.5%",perf2y:"+38.4%",perf3y:"+52.1%"},
-  {code:"98637078",name:"統一大中華中小基金(新台幣)",isin:"TW00000013",currency:"TWD",risk:5,type:"Core",desc:"聚焦大中華區中小型成長股，爆發力強。",perf:"+21.2%",perf2y:"+42.5%",perf3y:"+60.8%"},
-  {code:"98636611",name:"PGIM保德信全球中小基金-新臺幣",isin:"TW00000014",currency:"TWD",risk:4,type:"Core",desc:"透過全球化分散佈局中小型企業，分散單一市場風險。",perf:"+17.8%",perf2y:"+32.1%",perf3y:"+48.5%"},
-  {code:"98638042",name:"野村全球短期收益基金-新臺幣計價",isin:"TW00001001",currency:"TWD",risk:2,type:"Satellite",desc:"以短期資產配置為主，維持良好流動性與穩健回報。",perf:"+5.5%",perf2y:"+10.2%",perf3y:"+14.5%"},
-  {code:"98638121",name:"PGIM保德信多元收益組合基金-新台幣累積型",isin:"TW00001002",currency:"TWD",risk:3,type:"Satellite",desc:"採多重資產組合策略，靈活調整以應對市場波動。",perf:"+6.8%",perf2y:"+12.5%",perf3y:"+18.2%"},
-  {code:"98638125",name:"野村多元收益多重資產基金-累積類型新臺幣計價",isin:"TW00001003",currency:"TWD",risk:3,type:"Satellite",desc:"涵蓋股債與另類資產，提供多元化收益來源。",perf:"+7.2%",perf2y:"+13.8%",perf3y:"+19.5%"},
-  {code:"98637745",name:"野村全球高股息基金-累積類型人民幣計價",isin:"TW00001004",currency:"CNY",risk:4,type:"Satellite",desc:"精選全球具備高股息發放能力之企業。",perf:"+12.1%",perf2y:"+22.5%",perf3y:"+34.8%"},
-  {code:"98637933",name:"野村亞太高股息基金-累積型人民幣計價",isin:"TW00001005",currency:"CNY",risk:4,type:"Satellite",desc:"聚焦亞太區優質高息股。",perf:"+13.8%",perf2y:"+25.2%",perf3y:"+38.5%"},
-  {code:"98636728",name:"野村台灣高股息基金-累積類型",isin:"TW00001006",currency:"TWD",risk:4,type:"Satellite",desc:"鎖定台股優質高息企業，參與台股除息旺季與長期成長。",perf:"+18.5%",perf2y:"+35.2%",perf3y:"+52.1%"},
-  {code:"98638350",name:"PGIM保德信策略成長ETF組合基金-新台幣",isin:"TW00001007",currency:"TWD",risk:4,type:"Satellite",desc:"透過策略型ETF佈局全球，追求長期超額成長空間。",perf:"+15.4%",perf2y:"+30.2%",perf3y:"+45.8%"},
-  {code:"98640652",name:"台新ESG環保愛地球成長基金-新臺幣",isin:"TW00001008",currency:"TWD",risk:4,type:"Satellite",desc:"鎖定符合ESG與環保趨勢之優質成長股，參與永續紅利。",perf:"+20.1%",perf2y:"+41.2%",perf3y:"+62.5%"},
-  {code:"98640759",name:"野村全球正向效應成長基金-累積類型新臺幣",isin:"TW00001009",currency:"TWD",risk:4,type:"Satellite",desc:"投資於對社會與環境具備正向效應之企業，結合報酬與影響力。",perf:"+19.2%",perf2y:"+38.5%",perf3y:"+58.1%"},
-  {code:"98636754",name:"野村全球不動產證券化基金累積型新臺幣計價",isin:"TW00001010",currency:"TWD",risk:4,type:"Satellite",desc:"鎖定全球REITs標的，獲取租金收益與資產增值機會。",perf:"+11.8%",perf2y:"+20.5%",perf3y:"+28.2%"},
-  {code:"C0109018",name:"PGIM全球精選不動產證券基金A美元累積型",isin:"TW000T0101A0",currency:"USD",risk:4,type:"Satellite",desc:"鎖定全球REITs標的。",perf:"+11.5%",perf2y:"+19.8%",perf3y:"+27.5%"},
-  {code:"98637741",name:"野村全球不動產證券化基金-累積類型人民幣計價",isin:"TW00001011",currency:"CNY",risk:4,type:"Satellite",desc:"鎖定全球REITs標的。",perf:"+11.2%",perf2y:"+19.2%",perf3y:"+26.8%"},
-  {code:"00772B",name:"中信高評級公司債",isin:"TW00000772B",currency:"TWD",risk:2,type:"Satellite",desc:"追求彭博10年期以上高評級美元公司債指數之收益。",perf:"+4.5%",perf2y:"+8.2%",perf3y:"+11.5%"},
-  {code:"0056",name:"元大高股息",isin:"TW000005600",currency:"TWD",risk:4,type:"Satellite",desc:"台股高股息經典指標，鎖定預測殖利率最高之企業。",perf:"+15.2%",perf2y:"+32.4%",perf3y:"+48.5%"},
-  {code:"006208",name:"富邦台50",isin:"TW000006208",currency:"TWD",risk:4,type:"Satellite",desc:"貼近台股市值前50大企業表現，成本低廉。",perf:"+22.5%",perf2y:"+48.2%",perf3y:"+72.5%"},
-  {code:"0050",name:"元大台灣50",isin:"TW000005000",currency:"TWD",risk:4,type:"Satellite",desc:"台灣市值最大50家上市企業縮影。",perf:"+22.4%",perf2y:"+48.1%",perf3y:"+72.2%"},
-  {code:"00646",name:"元大S&P500",isin:"TW000006460",currency:"TWD",risk:4,type:"Satellite",desc:"追蹤美股標普500指數，掌握全球最強企業動能。",perf:"+25.2%",perf2y:"+52.5%",perf3y:"+80.1%"},
-  {code:"00662",name:"富邦NASDAQ",isin:"TW000006620",currency:"TWD",risk:4,type:"Satellite",desc:"鎖定那斯達克100大科技股，追求超額報酬首選。",perf:"+32.1%",perf2y:"+68.5%",perf3y:"+105.2%"},
-  {code:"006203",name:"元大MSCI台灣",isin:"TW000006203",currency:"TWD",risk:4,type:"Satellite",desc:"追蹤MSCI台灣指數，受外資青睞之配置標的。",perf:"+21.5%",perf2y:"+45.8%",perf3y:"+68.2%"},
-  {code:"0052",name:"富邦科技",isin:"TW000005200",currency:"TWD",risk:4,type:"Satellite",desc:"聚焦台股電子權值股，掌握台灣科技產業核心優勢。",perf:"+28.5%",perf2y:"+62.1%",perf3y:"+95.4%"},
-  {code:"00692",name:"富邦公司治理",isin:"TW000006920",currency:"TWD",risk:4,type:"Satellite",desc:"選取符合公司治理指標之優質台股企業。",perf:"+20.2%",perf2y:"+42.1%",perf3y:"+65.5%"},
-  {code:"00663L",name:"國泰臺灣加權正2",isin:"TW00000663L",currency:"TWD",risk:5,type:"Satellite",desc:"台股加權指數單日兩倍回報，適合積極波段操作。",perf:"+45.2%",perf2y:"+98.5%",perf3y:"+152.1%"}
+  {
+    "code": "97978047",
+    "name": "PGIM保德信貨幣市場基金",
+    "isin": "TW000T0805Y9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0109004",
+    "name": "PGIM美國公司債基金T美元累積",
+    "isin": "IE00BDZVHR40",
+    "currency": "USD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "92017204",
+    "name": "元大得利貨幣市場基金",
+    "isin": "TW000T0569Y1",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98639616",
+    "name": "PGIM保德信美國投資級企業債",
+    "isin": "TW000T0842A2",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641524",
+    "name": "華南永昌全球投資等級債券",
+    "isin": "TW000T1286A1",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0054057",
+    "name": "法盛盧米斯賽勒斯投資級債",
+    "isin": "LU0411266801",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "00713",
+    "name": "元大台灣高息低波",
+    "isin": "TW0000071303",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "98638122",
+    "name": "PGIM保德信多元收益組合基金",
+    "isin": "TW000T0837B0",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98642423",
+    "name": "中國信託策略優利多重資產",
+    "isin": "TW000T2629B9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641177",
+    "name": "PGIM保德信全球生態友善ESG",
+    "isin": "TW000T0848B7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98638532",
+    "name": "元大亞太優質高股息100指數",
+    "isin": "TW000T05A7B4",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637275",
+    "name": "台新北美收益資產證券化基金",
+    "isin": "TW000T4717B0",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98639936",
+    "name": "中國信託亞太實質收息多重",
+    "isin": "TW000T2683B6",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "00646",
+    "name": "元大S&P500",
+    "isin": "TW0000064605",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "01032183",
+    "name": "PGIM保德信高成長基金",
+    "isin": "TW000T0802Y6",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0109006",
+    "name": "PGIM JENNISON全球股票機會",
+    "isin": "IE00BGJVXP15",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98639403",
+    "name": "元大台灣卓越50ETF連結基金",
+    "isin": "TW000T05B2A6",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98642116",
+    "name": "中國信託美國聚焦成長基金",
+    "isin": "TW000T2628A3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "01031699",
+    "name": "統一全天候基金-A類型",
+    "isin": "TW000T0902Y4",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641594",
+    "name": "中國信託成長轉機多重資產",
+    "isin": "TW000T2625A9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "009803",
+    "name": "保德信市值動能50",
+    "isin": "TW0000098033",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "73990649",
+    "name": "PGIM保德信科技島基金",
+    "isin": "TW000T0808Y3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0109015",
+    "name": "PGIM Jennison美國成長基金",
+    "isin": "IE00BYWYQY37",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "81584335",
+    "name": "元大高科技基金",
+    "isin": "TW000T0508Y9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98642010",
+    "name": "台新美日台半導體基金",
+    "isin": "TW000T4775A0",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0115024",
+    "name": "法盛AI及機器人基金",
+    "isin": "LU1923623000",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98638079",
+    "name": "統一全球新科技基金",
+    "isin": "TW000T0933A9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "0050",
+    "name": "元大台灣50",
+    "isin": "TW0000050000",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "98641176",
+    "name": "PGIM全球生態友善ESG多重",
+    "isin": "TW000T0848A9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641767",
+    "name": "元大臺灣ESG永續ETF連結",
+    "isin": "TW000T05C3A3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641425",
+    "name": "中國信託ESG金融收益多重",
+    "isin": "TW000T2623A4",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98640652",
+    "name": "台新ESG環保愛地球成長基金",
+    "isin": "TW000T4769A3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0115029",
+    "name": "法盛Mirova全球永續股票",
+    "isin": "LU1623119135",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641053",
+    "name": "中國信託ESG碳商機多重",
+    "isin": "TW000T2622A6",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "00850",
+    "name": "元大臺灣ESG永續",
+    "isin": "TW0000085006",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "98640605",
+    "name": "PGIM美元非投資等級債券",
+    "isin": "TW000T0845C1",
+    "currency": "USD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0109011",
+    "name": "PGIM美國全方位非投等債",
+    "isin": "IE00BN47NK81",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98639310",
+    "name": "台新優先順位資產抵押非投等",
+    "isin": "TW000T4761B8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98639036",
+    "name": "PGIM保德信印度機會債券基金",
+    "isin": "TW000T0841B2",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637868",
+    "name": "統一亞洲非投資等級債券基金",
+    "isin": "TW000T0932B9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641204",
+    "name": "台新美國策略時機非投等債",
+    "isin": "TW000T4772B5",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "0056",
+    "name": "元大高股息",
+    "isin": "TW0000056007",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "73998065",
+    "name": "PGIM保德信大中華基金",
+    "isin": "TW000T0809Y1",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637127",
+    "name": "PGIM保德信中國品牌基金",
+    "isin": "TW000T0832Y3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637551",
+    "name": "統一大龍騰中國基金",
+    "isin": "TW000T0931Y3",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637537",
+    "name": "PGIM保德信中國中小基金",
+    "isin": "TW000T0836Y4",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637078",
+    "name": "統一大中華中小基金",
+    "isin": "TW000T0924Y8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98637071",
+    "name": "台新中國精選中小基金",
+    "isin": "TW000T4711Y5",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "0061",
+    "name": "元大寶滬深",
+    "isin": "TW0000061007",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "C0054008",
+    "name": "法盛漢瑞斯全球股票基金",
+    "isin": "LU0130103400",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "92029139",
+    "name": "PGIM保德信亞太基金",
+    "isin": "TW000T0804Y2",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641172",
+    "name": "元大全球優質龍頭平衡基金",
+    "isin": "TW000T05B6A7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98640076",
+    "name": "中國信託越南機會基金",
+    "isin": "TW000T2691A1",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "986371051",
+    "name": "PGIM保德信拉丁美洲基金",
+    "isin": "TW000T0830Y7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641587",
+    "name": "元大日本龍頭企業基金",
+    "isin": "TW000T05C1A7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "009810",
+    "name": "保德信全球跨國藍籌100",
+    "isin": "TW0000098108",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "83866508",
+    "name": "PGIM保德信中小型股基金",
+    "isin": "TW000T0810Y9",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "97988636",
+    "name": "PGIM保德信店頭市場基金",
+    "isin": "TW000T0806Y7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "97977878",
+    "name": "統一中小基金",
+    "isin": "TW000T0906Y5",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98636611",
+    "name": "PGIM保德信全球中小基金",
+    "isin": "TW000T0817Y4",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "17605622",
+    "name": "統一大滿貫基金-A類型",
+    "isin": "TW000T0911Y5",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "C0054121",
+    "name": "法盛-盧米斯賽勒斯債券基金",
+    "isin": "IE000D6HVBY0",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "006201",
+    "name": "元大富櫃50",
+    "isin": "TW0000062013",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  },
+  {
+    "code": "98638350",
+    "name": "PGIM保德信策略成長ETF組合",
+    "isin": "TW000T0839A8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98636726",
+    "name": "元大全球ETF穩健組合基金",
+    "isin": "TW000T0575Y8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98638113",
+    "name": "台新全球多元資產組合基金",
+    "isin": "TW000T4753A7",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Core",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98641041",
+    "name": "PGIM保德信全球新供應鏈基金",
+    "isin": "TW000T0847A1",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98636878",
+    "name": "元大全球地產建設入息基金",
+    "isin": "TW000T0542A8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "98638435",
+    "name": "華南永昌ShillerUSCAPEETF",
+    "isin": "TW000T1259A8",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "perf": "+10.5%",
+    "perf2y": "+20.1%",
+    "perf3y": "+35.2%"
+  },
+  {
+    "code": "00910",
+    "name": "第一金太空衛星",
+    "isin": "",
+    "currency": "TWD",
+    "risk": 4,
+    "type": "Satellite",
+    "desc": "精選ETF標的，追蹤指數表現。",
+    "perf": "+15.2%",
+    "perf2y": "+30.5%",
+    "perf3y": "+45.8%"
+  }
 ];
 
 export const QUESTIONS: Record<string, Question[]> = {
@@ -96,27 +897,147 @@ export const PERSONAS: Persona[] = [
 ];
 
 export const FUND_MAPPING: Record<string, {core: string[], sat: string[], etf: string}> = {
-  "口袋濟斯":{core:["C0109015","98639616","98637171"],sat:["98638042","98638121","98638125"],etf:"00772B"},
-  "口袋西施":{core:["98636594","98636798","98638825"],sat:["98637745","98637933","98636728"],etf:"0056"},
-  "口袋吉娃":{core:["98636594","98636798","98638825"],sat:["98638042","98638121","98638125"],etf:"006208"},
-  "口袋柴":{core:["98637910","98638198","98638199"],sat:["98638350","98640652","98640759"],etf:"0050"},
-  "口袋貴賓":{core:["C0109015","C0115008","C0115009"],sat:["73998065","98637078","98636754"],etf:"00646"},
-  "口袋拉拉":{core:["C0109015","C0115008","C0115009"],sat:["98636594","98636798","98638825"],etf:"00662"},
-  "口袋土狗":{core:["98637337","98638396","98639960"],sat:["98638825","98636594","98636798"],etf:"006203"},
-  "口袋邊牧":{core:["C0109015","C0115008","C0115009"],sat:["98636754","C0109018","98637741"],etf:"0052"},
-  "口袋阿金":{core:["C0109015","C0115008","C0115009"],sat:["73998065","98637078","98636754"],etf:"00692"},
-  "口袋獒":{core:["73998065","98637078","98636611"],sat:["98637337","98638396","98639960"],etf:"00663L"}
+  "口袋柴": {
+    "core": [
+      "97978047",
+      "C0109004",
+      "92017204"
+    ],
+    "sat": [
+      "98639616",
+      "98641524",
+      "C0054057"
+    ],
+    "etf": "00713"
+  },
+  "口袋阿金": {
+    "core": [
+      "98638122",
+      "98642423",
+      "98641177"
+    ],
+    "sat": [
+      "98638532",
+      "98637275",
+      "98639936"
+    ],
+    "etf": "00646"
+  },
+  "口袋拉拉": {
+    "core": [
+      "01032183",
+      "C0109006",
+      "98639403"
+    ],
+    "sat": [
+      "98642116",
+      "01031699",
+      "98641594"
+    ],
+    "etf": "009803"
+  },
+  "口袋土狗": {
+    "core": [
+      "73990649",
+      "C0109015",
+      "81584335"
+    ],
+    "sat": [
+      "98642010",
+      "C0115024",
+      "98638079"
+    ],
+    "etf": "0050"
+  },
+  "口袋濟斯": {
+    "core": [
+      "98641176",
+      "98641767",
+      "98641425"
+    ],
+    "sat": [
+      "98640652",
+      "C0115029",
+      "98641053"
+    ],
+    "etf": "00850"
+  },
+  "口袋獒": {
+    "core": [
+      "98640605",
+      "C0109011",
+      "98639310"
+    ],
+    "sat": [
+      "98639036",
+      "98637868",
+      "98641204"
+    ],
+    "etf": "0056"
+  },
+  "口袋西施": {
+    "core": [
+      "73998065",
+      "98637127",
+      "98637551"
+    ],
+    "sat": [
+      "98637537",
+      "98637078",
+      "98637071"
+    ],
+    "etf": "0061"
+  },
+  "口袋邊牧": {
+    "core": [
+      "C0054008",
+      "92029139",
+      "98641172"
+    ],
+    "sat": [
+      "98640076",
+      "986371051",
+      "98641587"
+    ],
+    "etf": "009810"
+  },
+  "口袋貴賓": {
+    "core": [
+      "83866508",
+      "97988636",
+      "97977878"
+    ],
+    "sat": [
+      "98636611",
+      "17605622",
+      "C0054121"
+    ],
+    "etf": "006201"
+  },
+  "口袋吉娃": {
+    "core": [
+      "98638350",
+      "98636726",
+      "98638113"
+    ],
+    "sat": [
+      "98641041",
+      "98636878",
+      "98638435"
+    ],
+    "etf": "00910"
+  }
 };
 
 export const ETF_LINKS: Record<string, string> = {
-  "00772B": "https://www.pocket.tw/etf/tw/00772B",
-  "0056": "https://www.pocket.tw/etf/tw/0056",
-  "006208": "https://www.pocket.tw/etf/tw/006208",
-  "0050": "https://www.pocket.tw/etf/tw/0050",
+  "00713": "https://www.pocket.tw/etf/tw/00713",
   "00646": "https://www.pocket.tw/etf/tw/00646",
-  "00662": "https://www.pocket.tw/etf/tw/00662",
-  "006203": "https://www.pocket.tw/etf/tw/006203",
-  "0052": "https://www.pocket.tw/etf/tw/0052",
-  "00692": "https://www.pocket.tw/etf/tw/00692",
-  "00663L": "https://www.pocket.tw/etf/tw/00663L"
+  "009803": "https://www.pocket.tw/etf/tw/009803",
+  "0050": "https://www.pocket.tw/etf/tw/0050",
+  "00850": "https://www.pocket.tw/etf/tw/00850",
+  "0056": "https://www.pocket.tw/etf/tw/0056",
+  "0061": "https://www.pocket.tw/etf/tw/0061",
+  "009810": "https://www.pocket.tw/etf/tw/009810",
+  "006201": "https://www.pocket.tw/etf/tw/006201",
+  "00910": "https://www.pocket.tw/etf/tw/00910"
 };
