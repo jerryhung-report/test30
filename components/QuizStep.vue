@@ -125,7 +125,7 @@ const isAnswered = computed(() => {
                 :key="v"
                 @click="handleAnswer(v)"
                 class="flex-1 aspect-square sm:h-14 sm:w-14 rounded-2xl font-black text-[20px] transition-all"
-                :class="answers[currentQ.id] === v ? 'bg-[#D21118] text-white shadow-xl' : 'bg-slate-50 text-slate-400 hover:bg-[#D21118] hover:text-white'"
+                :class="answers[currentQ.id] === v ? 'bg-[#D21118] text-white shadow-xl' : 'bg-slate-50 text-slate-400 hover:bg-slate-200'"
               >
                 {{ v }}
               </button>
@@ -140,14 +140,14 @@ const isAnswered = computed(() => {
               <button
                 @click="handleAnswer(7)"
                 class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
-                :class="answers[currentQ.id] === 7 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
+                :class="answers[currentQ.id] === 7 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-slate-200'"
               >
                 是
               </button>
               <button
                 @click="handleAnswer(1)"
                 class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
-                :class="answers[currentQ.id] === 1 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
+                :class="answers[currentQ.id] === 1 ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-slate-200'"
               >
                 否
               </button>
@@ -158,7 +158,7 @@ const isAnswered = computed(() => {
                 :key="opt.val"
                 @click="handleAnswer(opt.val)"
                 class="w-full py-5 px-8 rounded-2xl font-bold text-[20px] text-left flex justify-between items-center group transition-all duration-300"
-                :class="answers[currentQ.id] === opt.val ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-[#D21118] hover:text-white'"
+                :class="answers[currentQ.id] === opt.val ? 'bg-[#D21118] text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-slate-200'"
               >
                 {{ opt.text }}
               </button>
