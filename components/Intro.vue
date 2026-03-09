@@ -21,10 +21,10 @@ const handleStartClick = () => {
         </h1>
         <div class="space-y-4">
           <p class="text-slate-800 font-bold text-xl sm:text-2xl max-w-4xl mx-auto leading-relaxed">
-            30題測驗，完成後即可立刻獲得您的
+            30題測驗完成後，即可立刻獲得您的
           </p>
           <p class="text-slate-800 font-bold text-xl sm:text-2xl max-w-4xl mx-auto leading-relaxed">
-            投資風格定位分析報告 與 適配基金
+            投資風格定位分析報告與適配基金！
           </p>
         </div>
       </div>

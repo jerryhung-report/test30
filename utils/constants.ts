@@ -9,7 +9,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "追求基金資產之穩定收益，主要投資於中華民國境內之貨幣市場標的。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -21,7 +21,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "USD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "主要投資於美元計價之投資等級公司債，以獲取穩健之利息收益及資本利得。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -33,7 +33,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於高流動性、低風險之貨幣市場工具，以維持本金之安全及較高之流動性，並追求穩定之收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -45,7 +45,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過投資於美國投資等級企業債券，追求長期資本增值及穩定之收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -57,7 +57,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "佈局全球投資等級債券，以獲取穩健收益及長期資本增值為目標。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -69,7 +69,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過投資於全球投資等級債券，追求高於平均水準之收益及資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -81,7 +81,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤「臺灣指數公司特選高股息低波動指數」，兼具高股息與低波動特性。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -93,7 +93,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過動態資產配置，投資於全球多元資產，追求長期穩健之收益與資本利得。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -105,7 +105,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於多重資產，結合高股息股票與債券，追求穩定之收益與資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -117,7 +117,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球具備生態友善與ESG概念之企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -129,7 +129,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "追蹤亞太地區優質高股息企業，追求長期穩定的股息收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -141,7 +141,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於北美地區之不動產證券化商品(REITs)，追求穩定收益及資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -153,7 +153,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於亞太地區實質資產及高息資產，追求長期穩健收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -165,7 +165,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤美國標普500指數，提供投資人參與美國大型企業成長之機會。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -177,7 +177,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於具高成長潛力之台灣上市上櫃公司股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -189,7 +189,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球具備強勁成長潛力之優質企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -201,7 +201,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "連結元大台灣50ETF，提供投資人參與台灣市值前50大企業之表現。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -213,7 +213,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "聚焦投資於美國具備高成長潛力之企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -225,7 +225,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過靈活調整持股比例，因應市場多空變化，追求長期穩健之資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -237,7 +237,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於具備成長潛力與轉機題材之多重資產，追求資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -249,7 +249,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤臺灣指數公司特選臺灣上市上櫃市值動能50指數。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -261,7 +261,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "聚焦台灣科技產業，投資於具全球競爭力之科技類股，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -273,7 +273,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於美國具備長期成長潛力之大型企業，追求資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -285,7 +285,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於國內高科技產業股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -297,7 +297,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "聚焦美國、日本及台灣之半導體產業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -309,7 +309,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球AI及機器人相關產業，掌握科技創新趨勢。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -321,7 +321,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球具備創新科技與破壞式創新之企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -333,7 +333,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤臺灣50指數，涵蓋台灣市值前50大之上市公司。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -345,7 +345,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球生態友善及ESG相關之多重資產，追求長期穩健回報。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -357,7 +357,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "連結元大臺灣ESG永續ETF，參與台灣ESG表現優異企業之投資。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -369,7 +369,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球ESG表現優良之金融資產，追求穩定收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -381,7 +381,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球環保及ESG相關產業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -393,7 +393,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球致力於永續發展之企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -405,7 +405,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "聚焦全球減碳趨勢與碳商機，投資於相關之多重資產。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -417,7 +417,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤臺灣永續指數，投資於台灣ESG表現優異之企業。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -429,7 +429,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "USD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於美元計價之非投資等級債券，追求較高之利息收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -441,7 +441,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "廣泛投資於美國非投資等級債券市場，追求高收益與資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -453,7 +453,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於具備優先擔保地位之非投資等級債券，兼顧收益與風險控管。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -465,7 +465,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於印度債券市場，掌握印度經濟成長帶來之收益機會。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -477,7 +477,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於亞洲地區非投資等級債券，追求較高之收益。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -489,7 +489,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過策略性配置美國非投資等級債券，追求長期總報酬。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -501,7 +501,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤臺灣高股息指數，精選預期殖利率較高之成分股。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -513,7 +513,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於大中華地區(中、港、台)之上市股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -525,7 +525,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "聚焦中國具備品牌優勢與內需成長潛力之企業，追求資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -537,7 +537,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於中國大陸及香港等大中華經濟圈之股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -549,7 +549,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於中國中小型企業，掌握其高成長潛力。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -561,7 +561,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於大中華地區之中小型股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -573,7 +573,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "精選中國具備高成長潛力之中小型企業進行投資。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -585,7 +585,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤滬深300指數，提供投資人參與中國A股市場之管道。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -597,7 +597,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過價值投資策略，投資於全球被低估之優質企業。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -609,7 +609,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於亞太地區(不含日本)之股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -621,7 +621,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球各產業龍頭企業之股票及債券，追求穩健之長期報酬。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -633,7 +633,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於越南股票市場，掌握越南經濟快速成長之契機。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -645,7 +645,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於拉丁美洲地區之股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -657,7 +657,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於日本各產業之龍頭企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -669,7 +669,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤全球跨國藍籌企業表現。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -681,7 +681,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於台灣中小型上市公司，掌握其爆發性成長潛力。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -693,7 +693,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於台灣上櫃股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -705,7 +705,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於台灣中小型股票，發掘具備高成長潛力之企業。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -717,7 +717,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球中小型企業，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -729,7 +729,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於台灣上市上櫃股票，追求長期資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -741,7 +741,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過彈性配置全球各類債券，追求高於平均水準之總報酬。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -753,7 +753,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤櫃買富櫃50指數，涵蓋台灣上櫃市場具代表性之50檔股票。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
@@ -765,7 +765,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過投資全球ETF，進行動態資產配置，追求長期穩健成長。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -777,7 +777,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球各類資產之ETF，追求穩健之投資回報。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -789,7 +789,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Core",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "透過投資組合基金，分散佈局全球多元資產，追求穩健增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -801,7 +801,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球供應鏈重組趨勢下之受惠企業，追求資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -813,7 +813,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "投資於全球不動產及基礎建設相關證券，追求穩定入息與資本增值。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -825,7 +825,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "優質基金標的，提供穩健的投資選擇。",
+    "desc": "追蹤Shiller US CAPE指數，透過價值投資策略參與美國股市。",
     "perf": "+10.5%",
     "perf2y": "+20.1%",
     "perf3y": "+35.2%"
@@ -837,7 +837,7 @@ export const MOCK_FUNDS: Fund[] = [
     "currency": "TWD",
     "risk": 4,
     "type": "Satellite",
-    "desc": "精選ETF標的，追蹤指數表現。",
+    "desc": "追蹤太空衛星相關產業指數，掌握太空科技發展商機。",
     "perf": "+15.2%",
     "perf2y": "+30.5%",
     "perf3y": "+45.8%"
